@@ -1,15 +1,16 @@
-import { Link, useLocation } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
+import { NavLink, Outlet } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Home = () => {
-    const location = useLocation();
-    console.log(location)
+   
     
     return (
         <div>
-            <Navbar></Navbar>
-            <h2>Home Page</h2>
-            <Link to={'/about'} >About</Link>
+            <div className="flex items-center justify-center gap-6">
+               <NavLink className={`bg-green-400 rounded-lg p-4`} to='/'>Button One</NavLink>
+               <NavLink className={`bg-red-400 rounded-lg p-4`} to='/buttonTwo'>Button Two</NavLink>
+            </div>
+            <Outlet></Outlet>
         </div>
     );
 };
